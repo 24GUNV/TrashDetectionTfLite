@@ -1,0 +1,26 @@
+<annotation>
+	<folder>plastic</folder>
+	<filename>plastic1.jpg</filename>
+	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\plastic\plastic1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>194</width>
+		<height>259</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>plastic</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>55</xmin>
+			<ymin>12</ymin>
+			<xmax>130</xmax>
+			<ymax>252</ymax>
+		</bndbox>
+	</object>
+</annotation>
