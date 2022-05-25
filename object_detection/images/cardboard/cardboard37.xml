@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cardboard</folder>
+	<filename>cardboard37.jpg</filename>
+	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\cardboard\cardboard37.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cardboard</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>124</xmin>
+			<ymin>86</ymin>
+			<xmax>332</xmax>
+			<ymax>305</ymax>
+		</bndbox>
+	</object>
+</annotation>
