@@ -1,0 +1,26 @@
+<annotation>
+	<folder>metal</folder>
+	<filename>metal13.jpg</filename>
+	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\metal\metal13.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>194</width>
+		<height>259</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cardboard</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>36</xmin>
+			<ymin>33</ymin>
+			<xmax>159</xmax>
+			<ymax>206</ymax>
+		</bndbox>
+	</object>
+</annotation>
