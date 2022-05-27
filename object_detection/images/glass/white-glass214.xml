@@ -1,0 +1,26 @@
+<annotation>
+	<folder>white-glass</folder>
+	<filename>white-glass214.jpg</filename>
+	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\white-glass\white-glass214.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>glass</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>123</xmin>
+			<ymin>5</ymin>
+			<xmax>459</xmax>
+			<ymax>384</ymax>
+		</bndbox>
+	</object>
+</annotation>
