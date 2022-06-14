@@ -1,0 +1,26 @@
+<annotation>
+	<folder>glass</folder>
+	<filename>white-glass236.jpg</filename>
+	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\glass\white-glass236.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>glass</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>22</xmin>
+			<ymin>100</ymin>
+			<xmax>433</xmax>
+			<ymax>305</ymax>
+		</bndbox>
+	</object>
+</annotation>
