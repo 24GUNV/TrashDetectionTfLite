@@ -1,0 +1,26 @@
+<annotation>
+	<folder>green-glass</folder>
+	<filename>green-glass6.jpg</filename>
+	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\green-glass\green-glass6.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>221</width>
+		<height>228</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>glass</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>15</xmin>
+			<ymin>5</ymin>
+			<xmax>217</xmax>
+			<ymax>225</ymax>
+		</bndbox>
+	</object>
+</annotation>

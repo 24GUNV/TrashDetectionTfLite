@@ -1,0 +1,26 @@
+<annotation>
+	<folder>metal</folder>
+	<filename>metal112.jpg</filename>
+	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\metal\metal112.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>276</width>
+		<height>183</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>metal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>38</xmin>
+			<ymin>28</ymin>
+			<xmax>262</xmax>
+			<ymax>164</ymax>
+		</bndbox>
+	</object>
+</annotation>
