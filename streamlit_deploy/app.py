@@ -4,6 +4,9 @@ import cv2
 from icevision.all import *
 from icevision.models import *
 
+from google_drive_downloader import GoogleDriveDownloader as gdd
+
+gdd.download_file_from_google_drive(file_id='1WzAf8aiUT1q2b3sfdXvPkY3mK5B_62lj')
 
 # Loading in the model
 model_loaded = model_from_checkpoint("/content/drive/MyDrive/AI/garbageclassification.pth")
