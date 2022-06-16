@@ -1,5 +1,4 @@
 streamlit
 streamlit_webrtc
-opencv-python-headless
 googledrivedownloader
 icevision[inference]
