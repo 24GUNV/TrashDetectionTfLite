@@ -1,6 +1,5 @@
 import streamlit as st
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
-import cv2
 from icevision.all import *
 from icevision.models import *
 
