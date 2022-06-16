@@ -1,1 +1,0 @@
-Contains the newest updated AI to classify objects that works with this dataset
