@@ -1,6 +1,5 @@
 streamlit
 streamlit_webrtc
-libgl1-mesa-glx
 opencv-python
 googledrivedownloader
 icevision
