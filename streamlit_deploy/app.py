@@ -150,9 +150,11 @@ def livestream():
             return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
     st.write("Doesnt work for me due to network issues")
 
-    webrtc_streamer(key="example", rtc_configuration={
-        "iceServers": [{"urls": ["stun:stun.xten.com:3478"]}]
-    })
+    webrtc_streamer(key="example",
+                    rtc_configuration={
+                        "iceServers": [{"urls": ["stun:stun1.l.google.com:19302"]}]
+                    }
+                )
 
 
 def intro():
