@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import os
 import av
-
+from streamlit_webrtc import *
 import tensorflow as tf
 
 assert tf.__version__.startswith('2')
@@ -11,10 +11,6 @@ tf.get_logger().setLevel('ERROR')
 from absl import logging
 
 logging.set_verbosity(logging.ERROR)
-
-# from google_drive_downloader import GoogleDriveDownloader as gdd
-#
-# gdd.download_file_from_google_drive(file_id='1WzAf8aiUT1q2b3sfdXvPkY3mK5B_62lj')
 
 import cv2
 from PIL import Image
@@ -117,6 +113,7 @@ def run_odt_and_draw_results(image_path, interpreter, threshold=0.5):
 
 
 def upload_image():
+    st.title("Upload an image!")
     uploaded_file = st.file_uploader("Choose a file", type=['png', 'jpg', 'jpeg'])
 
     detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 1.0, 0.3)
@@ -136,32 +133,34 @@ def upload_image():
 
 
 def livestream():
-    # class VideoProcessor:
-    #     def recv(self, frame):
-    #         DETECTION_THRESHOLD = 0.3
-    #
-    #         arr = np.array(frame)
-    #
-    #         # Run inference and draw detection result on the local copy of the original file
-    #         detection_result_image = run_odt_and_draw_results(
-    #             arr,
-    #             interpreter,
-    #             threshold=DETECTION_THRESHOLD
-    #         )
-    #
-    #         # Show the detection result
-    #         return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
-    st.write("Still not done bruh")
+    class VideoProcessor:
+        def recv(self, frame):
+            DETECTION_THRESHOLD = 0.3
+
+            arr = np.array(frame)
+
+            # Run inference and draw detection result on the local copy of the original file
+            detection_result_image = run_odt_and_draw_results(
+                arr,
+                interpreter,
+                threshold=DETECTION_THRESHOLD
+            )
+
+            # Show the detection result
+            return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
+    st.write("Doesnt work for me due to network issues")
 
 
 def intro():
     st.title('AI Builders Demo')
     st.write('Made by Gun from Hidden Hammers')
+    st.write("Made using Tensorflow lite")
+    st.image(Image.open('streamlit_deploy/sources/tf_lite'))
 
 
 page_names_to_funcs = {
     "Introduction": intro,
-    "Uoload an image!": upload_image,
+    "Upload an image!": upload_image,
     "Do it Live!": livestream,
 }
 
