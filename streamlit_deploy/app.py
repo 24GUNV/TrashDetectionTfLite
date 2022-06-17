@@ -19,7 +19,7 @@ logging.set_verbosity(logging.ERROR)
 import cv2
 from PIL import Image
 
-model_path = 'model.tflite'
+model_path = 'streamlit_deploy/model.tflite'
 
 # Load the TFLite model
 interpreter = tf.lite.Interpreter(model_path=model_path)
