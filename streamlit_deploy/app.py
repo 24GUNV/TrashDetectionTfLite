@@ -155,7 +155,7 @@ def intro():
     st.title('AI Builders Demo')
     st.write('Made by Gun from Hidden Hammers')
     st.write("Made using Tensorflow lite")
-    st.image(Image.open('streamlit_deploy/sources/tf_lite'))
+    st.image(Image.open('streamlit_deploy/sources/tf_lite.png'))
 
 
 page_names_to_funcs = {
