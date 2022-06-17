@@ -25,6 +25,15 @@ model_path = 'streamlit_deploy/model.tflite'
 interpreter = tf.lite.Interpreter(model_path=model_path)
 interpreter.allocate_tensors()
 
+# Classes
+classes = {
+    0: "cardboard",
+    1: "plastic",
+    2: "metal",
+    3: "glass",
+    4: "paper"
+}
+
 # Define a list of colors for visualization
 COLORS = np.random.randint(0, 255, size=(5, 3), dtype=np.uint8)
 
