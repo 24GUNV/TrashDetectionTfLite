@@ -31,9 +31,7 @@ COLORS = np.random.randint(0, 255, size=(5, 3), dtype=np.uint8)
 
 def preprocess_image(image_path, input_size):
     """Preprocess the input image to feed to the TFLite model"""
-    # img = tf.io.read_file(image_path)
-    img = tf.io.decode_image(img, channels=3)
-    img = tf.image.convert_image_dtype(img, tf.uint8)
+    img = tf.image.convert_image_dtype(image_path, tf.uint8)
     original_image = img
     resized_img = tf.image.resize(img, input_size)
     resized_img = resized_img[tf.newaxis, :]
@@ -115,6 +113,7 @@ detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 
 st.write(f"The Detection Threshold is {detection_threshold}")
 
 if uploaded_file is not None:
+    uploaded_file = np.array(uploaded_file)
     detection_result_image = run_odt_and_draw_results(
         uploaded_file,
         interpreter,
