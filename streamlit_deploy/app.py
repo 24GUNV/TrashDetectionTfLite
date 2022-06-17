@@ -111,13 +111,13 @@ def run_odt_and_draw_results(image_path, interpreter, threshold=0.5):
 
 uploaded_file = st.file_uploader("Choose a file", type=['png', 'jpg'])
 
-age = st.slider('What should the detection_threshold be?', 0.0, 1.0, 0.3)
-st.write("I'm ", age, 'years old')
+detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 1.0, 0.3)
+st.write(f"The Detection Threshold is {detection_threshold}")
 
 detection_result_image = run_odt_and_draw_results(
     uploaded_file,
     interpreter,
-    threshold=DETECTION_THRESHOLD
+    threshold=detection_threshold
 )
 
 img = Image.fromarray(detection_result_image)
