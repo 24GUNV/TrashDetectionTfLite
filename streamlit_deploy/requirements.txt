@@ -7,3 +7,4 @@ tensorflow==2.9.0
 pycocotools
 opencv-python-headless
 pillow
+av

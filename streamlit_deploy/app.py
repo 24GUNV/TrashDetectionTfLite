@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 import numpy as np
 import os
+import av
 
 import tensorflow as tf
 
@@ -107,8 +108,8 @@ def run_odt_and_draw_results(image, interpreter, threshold=0.5):
     return original_uint8
 
 
-class VideoTransformer(VideoTransformerBase):
-    def transform(self, frame):
+class VideoProcessor:
+    def recv(self, frame):
         DETECTION_THRESHOLD = 0.3
 
         arr = np.array(frame)
@@ -121,7 +122,7 @@ class VideoTransformer(VideoTransformerBase):
         )
 
         # Show the detection result
-        return detection_result_image
+        return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
 
 
 webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
