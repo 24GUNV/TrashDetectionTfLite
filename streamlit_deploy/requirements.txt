@@ -1,5 +1,8 @@
 streamlit
 streamlit_webrtc
+protobuf==3.19
+folium==0.2.1
+packaging==20.9
 libportaudio2
 tensorflow==2.9.0
 pycocotools
