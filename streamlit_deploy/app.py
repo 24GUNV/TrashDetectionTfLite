@@ -25,14 +25,8 @@ model_path = 'streamlit_deploy/model.tflite'
 interpreter = tf.lite.Interpreter(model_path=model_path)
 interpreter.allocate_tensors()
 
-# Load the labels into a list
-classes = ['???'] * model.model_spec.config.num_classes
-label_map = model.model_spec.config.label_map
-for label_id, label_name in label_map.as_dict().items():
-    classes[label_id - 1] = label_name
-
 # Define a list of colors for visualization
-COLORS = np.random.randint(0, 255, size=(len(classes), 3), dtype=np.uint8)
+COLORS = np.random.randint(0, 255, size=(5, 3), dtype=np.uint8)
 
 
 def preprocess_image(image, input_size):
