@@ -150,6 +150,8 @@ def livestream():
             return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
     st.write("Doesnt work for me due to network issues")
 
+    webrtc_streamer(key="example")
+
 
 def intro():
     st.title('AI Builders Demo')
