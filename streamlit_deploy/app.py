@@ -120,7 +120,7 @@ if uploaded_file is not None:
         threshold=detection_threshold
     )
 
-    img = Image.fromarray(detection_result_image)
+    img = Image.fromarray(Image.open(uploaded_file))
 
     st.image(img, 'Results!')
 
