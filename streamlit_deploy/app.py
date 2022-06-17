@@ -113,14 +113,14 @@ detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 
 st.write(f"The Detection Threshold is {detection_threshold}")
 
 if uploaded_file is not None:
-    uploaded_file = np.array(uploaded_file)
+    file = np.array(Image.open(uploaded_file))
     detection_result_image = run_odt_and_draw_results(
-        uploaded_file,
+        file,
         interpreter,
         threshold=detection_threshold
     )
 
-    img = Image.fromarray(Image.open(uploaded_file))
+    img = Image.fromarray(detection_result_image)
 
     st.image(img, 'Results!')
 
