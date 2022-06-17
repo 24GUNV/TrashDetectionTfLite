@@ -116,35 +116,54 @@ def run_odt_and_draw_results(image_path, interpreter, threshold=0.5):
     return original_uint8
 
 
-uploaded_file = st.file_uploader("Choose a file", type=['png', 'jpg'])
+def upload_image():
+    uploaded_file = st.file_uploader("Choose a file", type=['png', 'jpg', 'jpeg'])
 
-detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 1.0, 0.3)
-st.write(f"The Detection Threshold is {detection_threshold}")
+    detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 1.0, 0.3)
+    st.write(f"The Detection Threshold is {detection_threshold}")
 
-if uploaded_file is not None:
-    file = np.array(Image.open(uploaded_file))
-    detection_result_image = run_odt_and_draw_results(
-        file,
-        interpreter,
-        threshold=detection_threshold
-    )
+    if uploaded_file is not None:
+        file = np.array(Image.open(uploaded_file))
+        detection_result_image = run_odt_and_draw_results(
+            file,
+            interpreter,
+            threshold=detection_threshold
+        )
 
-    img = Image.fromarray(detection_result_image)
+        img = Image.fromarray(detection_result_image)
 
-    st.image(img, 'Results!')
+        st.image(img, 'Results!')
 
-# class VideoProcessor:
-#     def recv(self, frame):
-#         DETECTION_THRESHOLD = 0.3
-#
-#         arr = np.array(frame)
-#
-#         # Run inference and draw detection result on the local copy of the original file
-#         detection_result_image = run_odt_and_draw_results(
-#             arr,
-#             interpreter,
-#             threshold=DETECTION_THRESHOLD
-#         )
-#
-#         # Show the detection result
-#         return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
+
+def livestream():
+    # class VideoProcessor:
+    #     def recv(self, frame):
+    #         DETECTION_THRESHOLD = 0.3
+    #
+    #         arr = np.array(frame)
+    #
+    #         # Run inference and draw detection result on the local copy of the original file
+    #         detection_result_image = run_odt_and_draw_results(
+    #             arr,
+    #             interpreter,
+    #             threshold=DETECTION_THRESHOLD
+    #         )
+    #
+    #         # Show the detection result
+    #         return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
+    st.write("Still not done bruh")
+
+
+def intro():
+    st.title('AI Builders Demo')
+    st.write('Made by Gun from Hidden Hammers')
+
+
+page_names_to_funcs = {
+    "Introduction": intro,
+    "Uoload an image!": upload_image,
+    "Do it Live!": livestream,
+}
+
+demo_name = st.sidebar.selectbox("Versions", page_names_to_funcs.keys())
+page_names_to_funcs[demo_name]()
