@@ -151,7 +151,7 @@ def livestream():
     st.write("Doesnt work for me due to network issues")
 
     webrtc_streamer(key="example", rtc_configuration={
-        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+        "iceServers": [{"urls": ["stun:stun.xten.com:3478"]}]
     })
 
 
