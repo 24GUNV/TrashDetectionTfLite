@@ -31,7 +31,7 @@ COLORS = np.random.randint(0, 255, size=(5, 3), dtype=np.uint8)
 
 def preprocess_image(image_path, input_size):
     """Preprocess the input image to feed to the TFLite model"""
-    img = tf.io.read_file(image_path)
+    # img = tf.io.read_file(image_path)
     img = tf.io.decode_image(img, channels=3)
     img = tf.image.convert_image_dtype(img, tf.uint8)
     original_image = img
@@ -114,15 +114,16 @@ uploaded_file = st.file_uploader("Choose a file", type=['png', 'jpg'])
 detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 1.0, 0.3)
 st.write(f"The Detection Threshold is {detection_threshold}")
 
-detection_result_image = run_odt_and_draw_results(
-    uploaded_file,
-    interpreter,
-    threshold=detection_threshold
-)
+if uploaded_file is not None:
+    detection_result_image = run_odt_and_draw_results(
+        uploaded_file,
+        interpreter,
+        threshold=detection_threshold
+    )
 
-img = Image.fromarray(detection_result_image)
+    img = Image.fromarray(detection_result_image)
 
-st.image(img, 'Results!')
+    st.image(img, 'Results!')
 
 # class VideoProcessor:
 #     def recv(self, frame):
