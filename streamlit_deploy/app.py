@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 import numpy as np
 import os
 import av
@@ -30,9 +29,11 @@ interpreter.allocate_tensors()
 COLORS = np.random.randint(0, 255, size=(5, 3), dtype=np.uint8)
 
 
-def preprocess_image(image, input_size):
+def preprocess_image(image_path, input_size):
     """Preprocess the input image to feed to the TFLite model"""
-    img = tf.convert_to_tensor(image, dtype=tf.float32)
+    img = tf.io.read_file(image_path)
+    img = tf.io.decode_image(img, channels=3)
+    img = tf.image.convert_image_dtype(img, tf.uint8)
     original_image = img
     resized_img = tf.image.resize(img, input_size)
     resized_img = resized_img[tf.newaxis, :]
@@ -66,14 +67,14 @@ def detect_objects(interpreter, image, threshold):
     return results
 
 
-def run_odt_and_draw_results(image, interpreter, threshold=0.5):
+def run_odt_and_draw_results(image_path, interpreter, threshold=0.5):
     """Run object detection on the input image and draw the detection results"""
     # Load the input shape required by the model
     _, input_height, input_width, _ = interpreter.get_input_details()[0]['shape']
 
     # Load the input image and preprocess it
     preprocessed_image, original_image = preprocess_image(
-        image,
+        image_path,
         (input_height, input_width)
     )
 
@@ -108,26 +109,33 @@ def run_odt_and_draw_results(image, interpreter, threshold=0.5):
     return original_uint8
 
 
-class VideoProcessor:
-    def recv(self, frame):
-        # DETECTION_THRESHOLD = 0.3
-        #
-        # arr = np.array(frame)
-        #
-        # # Run inference and draw detection result on the local copy of the original file
-        # detection_result_image = run_odt_and_draw_results(
-        #     arr,
-        #     interpreter,
-        #     threshold=DETECTION_THRESHOLD
-        # )
-        #
-        # # Show the detection result
-        # return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
-        img = frame.to_ndarray(format="bgr24")
+uploaded_file = st.file_uploader("Choose a file", type=['png', 'jpg'])
 
-        img = cv2.cvtColor(cv2.Canny(img, 100, 200), cv2.COLOR_GRAY2BGR)
+age = st.slider('What should the detection_threshold be?', 0, 1, 0.3)
+st.write("I'm ", age, 'years old')
 
-        return av.VideoFrame.from_ndarray(img, format="bgr24")
+detection_result_image = run_odt_and_draw_results(
+    uploaded_file,
+    interpreter,
+    threshold=DETECTION_THRESHOLD
+)
 
+img = Image.fromarray(detection_result_image)
 
-webrtc_streamer(key="example", video_processor_factory=VideoProcessor, rtc_configuration = {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+st.image(img, 'Results!')
+
+# class VideoProcessor:
+#     def recv(self, frame):
+#         DETECTION_THRESHOLD = 0.3
+#
+#         arr = np.array(frame)
+#
+#         # Run inference and draw detection result on the local copy of the original file
+#         detection_result_image = run_odt_and_draw_results(
+#             arr,
+#             interpreter,
+#             threshold=DETECTION_THRESHOLD
+#         )
+#
+#         # Show the detection result
+#         return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
