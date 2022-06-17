@@ -130,4 +130,4 @@ class VideoProcessor:
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 
-webrtc_streamer(key="example", video_processor_factory=VideoProcessor)
+webrtc_streamer(key="example", video_processor_factory=VideoProcessor, rtc_configuration = {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
