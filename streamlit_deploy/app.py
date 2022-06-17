@@ -125,4 +125,4 @@ class VideoProcessor:
         return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
 
 
-webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
+webrtc_streamer(key="example", video_processor_factory=VideoProcessor)
