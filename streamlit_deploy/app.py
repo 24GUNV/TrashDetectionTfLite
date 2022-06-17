@@ -110,19 +110,24 @@ def run_odt_and_draw_results(image, interpreter, threshold=0.5):
 
 class VideoProcessor:
     def recv(self, frame):
-        DETECTION_THRESHOLD = 0.3
+        # DETECTION_THRESHOLD = 0.3
+        #
+        # arr = np.array(frame)
+        #
+        # # Run inference and draw detection result on the local copy of the original file
+        # detection_result_image = run_odt_and_draw_results(
+        #     arr,
+        #     interpreter,
+        #     threshold=DETECTION_THRESHOLD
+        # )
+        #
+        # # Show the detection result
+        # return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
+        img = frame.to_ndarray(format="bgr24")
 
-        arr = np.array(frame)
+        img = cv2.cvtColor(cv2.Canny(img, 100, 200), cv2.COLOR_GRAY2BGR)
 
-        # Run inference and draw detection result on the local copy of the original file
-        detection_result_image = run_odt_and_draw_results(
-            arr,
-            interpreter,
-            threshold=DETECTION_THRESHOLD
-        )
-
-        # Show the detection result
-        return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
+        return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 
 webrtc_streamer(key="example", video_processor_factory=VideoProcessor)
