@@ -1,4 +1,7 @@
 streamlit
 streamlit_webrtc
-googledrivedownloader
-icevision[inference]
+libportaudio2
+tensorflow==2.9.0
+pycocotools
+opencv-python-headless
+pillow
