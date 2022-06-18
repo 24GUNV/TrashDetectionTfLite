@@ -137,7 +137,7 @@ def livestream():
         def recv(self, frame):
             DETECTION_THRESHOLD = 0.3
 
-            arr = frame.to_ndarray(format="brg24")
+            arr = frame.to_ndarray(format="bgr24")
 
             # Run inference and draw detection result on the local copy of the original file
             detection_result_image = run_odt_and_draw_results(
