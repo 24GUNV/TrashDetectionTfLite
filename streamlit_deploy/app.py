@@ -151,29 +151,31 @@ def livestream():
 
     st.write("Doesnt work for me due to network issues")
 
-    webrtc_streamer(key="example", rtc_configuration=
-    {
-        "iceServers": [
-            {
-                "urls": "stun:openrelay.metered.ca:80",
-            },
-            {
-                "urls": "turn:openrelay.metered.ca:80",
-                "username": "openrelayproject",
-                "credential": "openrelayproject",
-            },
-            {
-                "urls": "turn:openrelay.metered.ca:443",
-                "username": "openrelayproject",
-                "credential": "openrelayproject",
-            },
-            {
-                "urls": "turn:openrelay.metered.ca:443?transport=tcp",
-                "username": "openrelayproject",
-                "credential": "openrelayproject",
-            },
-        ],
-    })
+    webrtc_streamer(key="example",
+                    rtc_configuration=
+                    {
+                        "iceServers": [
+                            {
+                                "urls": "stun:openrelay.metered.ca:80",
+                            },
+                            {
+                                "urls": "turn:openrelay.metered.ca:80",
+                                "username": "openrelayproject",
+                                "credential": "openrelayproject",
+                            },
+                            {
+                                "urls": "turn:openrelay.metered.ca:443",
+                                "username": "openrelayproject",
+                                "credential": "openrelayproject",
+                            },
+                            {
+                                "urls": "turn:openrelay.metered.ca:443?transport=tcp",
+                                "username": "openrelayproject",
+                                "credential": "openrelayproject",
+                            },
+                        ],
+                    },
+                    video_proccessor_factory=VideoProcessor)
 
 
 def intro():
