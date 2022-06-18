@@ -154,9 +154,9 @@ def livestream():
     {
         "iceServers": [{"urls": ["stun:stun.xten.com:3478"]}],
         "RTCIceServer": [{
-            url: 'turn:numb.viagenie.ca',
-            credential: 'muazkh',
-            username: 'webrtc@live.com'
+            "url": 'turn:numb.viagenie.ca',
+            "credential": 'muazkh',
+            "username": 'webrtc@live.com'
         }]
     })
 
