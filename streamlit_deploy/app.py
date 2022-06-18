@@ -133,6 +133,7 @@ def upload_image():
 
 
 def livestream():
+
     class VideoProcessor:
         def recv(self, frame):
             DETECTION_THRESHOLD = 0.3
@@ -152,7 +153,7 @@ def livestream():
 
     webrtc_streamer(key="example", rtc_configuration=
     {
-        "iceServers": [{"urls": ["stun.logic.ky:3478"]}],
+        "iceServers": [{"urls": ["stun.l.google.com:19302"]}],
     })
 
 def intro():
