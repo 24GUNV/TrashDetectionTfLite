@@ -133,7 +133,6 @@ def upload_image():
 
 
 def livestream():
-
     class VideoProcessor:
         def recv(self, frame):
             DETECTION_THRESHOLD = 0.3
@@ -149,12 +148,33 @@ def livestream():
 
             # Show the detection result
             return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
+
     st.write("Doesnt work for me due to network issues")
 
     webrtc_streamer(key="example", rtc_configuration=
     {
-        "iceServers": [{"urls": ["stun.l.google.com:19302"]}],
+        "iceServers": [
+            {
+                "urls": "stun:openrelay.metered.ca:80",
+            },
+            {
+                "urls": "turn:openrelay.metered.ca:80",
+                "username": "openrelayproject",
+                "credential": "openrelayproject",
+            },
+            {
+                "urls": "turn:openrelay.metered.ca:443",
+                "username": "openrelayproject",
+                "credential": "openrelayproject",
+            },
+            {
+                "urls": "turn:openrelay.metered.ca:443?transport=tcp",
+                "username": "openrelayproject",
+                "credential": "openrelayproject",
+            },
+        ],
     })
+
 
 def intro():
     st.title('AI Builders Demo')
