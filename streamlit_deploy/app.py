@@ -133,9 +133,11 @@ def upload_image():
 
 
 def livestream():
+    detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 1.0, 0.3)
+    st.write(f"The Detection Threshold is {detection_threshold}")
+    
     class VideoProcessor:
         def recv(self, frame):
-            DETECTION_THRESHOLD = 0.3
 
             arr = frame.to_ndarray(format="bgr24")
 
@@ -143,11 +145,11 @@ def livestream():
             detection_result_image = run_odt_and_draw_results(
                 arr,
                 interpreter,
-                threshold=DETECTION_THRESHOLD
+                threshold=detection_threshold
             )
 
             # Show the detection result
-            return av.VideoFrame.from_ndarray(detection_result_image, format="brg24")
+            return av.VideoFrame.from_ndarray(detection_result_image, format="bgr24")
 
     st.write("Doesnt work for me due to network issues")
 
