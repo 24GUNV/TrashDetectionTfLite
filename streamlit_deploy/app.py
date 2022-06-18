@@ -175,7 +175,7 @@ def livestream():
                             },
                         ],
                     },
-                    video_proccessor_factory=VideoProcessor)
+                    video_processor_factory=VideoProcessor)
 
 
 def intro():
