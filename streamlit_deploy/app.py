@@ -152,12 +152,7 @@ def livestream():
 
     webrtc_streamer(key="example", rtc_configuration=
     {
-        "iceServers": [{"urls": ["stun:stun.xten.com:3478"]}],
-        "RTCIceServer": [{
-            "url": 'turn:numb.viagenie.ca',
-            "credential": 'muazkh',
-            "username": 'webrtc@live.com'
-        }]
+        "iceServers": [{"urls": ["stun.logic.ky:3478"]}],
     })
 
 def intro():
