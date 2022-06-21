@@ -184,21 +184,21 @@ def livestream():
 def intro():
     st.title('AI Builders Demo')
     st.write('Made by Gun from Hidden Hammers')
-    st.write("Blog: ")
+    st.write("Blog: https://medium.com/@24progun/object-detection-using-tensorflow-lite-80da8d75c03b")
     st.write("Made using Tensorflow lite")
     st.image(Image.open('streamlit_deploy/sources/tf_lite.png'))
     st.write("Note: The model works best with single object images that have a white background")
     st.write("Ex.")
     st.write("Cardboard")
-    st.image(Image.open('streamlit_deploy/sources/cardboard51.png'))
+    st.image(Image.open('streamlit_deploy/sources/cardboard51.jpg'))
     st.write("Glass")
-    st.image(Image.open('streamlit_deploy/sources/glass2.png'))
+    st.image(Image.open('streamlit_deploy/sources/glass2.jpg'))
     st.write("Metal")
-    st.image(Image.open('streamlit_deploy/sources/metal5.png'))
+    st.image(Image.open('streamlit_deploy/sources/metal5.jpg'))
     st.write("Paper")
-    st.image(Image.open('streamlit_deploy/sources/paper21.png'))
+    st.image(Image.open('streamlit_deploy/sources/paper21.jpg'))
     st.write("Plastic")
-    st.image(Image.open('streamlit_deploy/sources/plastic32.png'))
+    st.image(Image.open('streamlit_deploy/sources/plastic32.jpg'))
 
 
 page_names_to_funcs = {
