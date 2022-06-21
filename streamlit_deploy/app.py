@@ -116,7 +116,7 @@ def upload_image():
     st.title("Upload an image!")
     uploaded_file = st.file_uploader("Choose a file", type=['png', 'jpg', 'jpeg'])
 
-    detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 1.0, 0.3)
+    detection_threshold = st.slider('What should the detection threshold be?', 0.0, 1.0, 0.3)
     st.write(f"The Detection Threshold is {detection_threshold}")
 
     if uploaded_file is not None:
@@ -133,9 +133,9 @@ def upload_image():
 
 
 def livestream():
-    detection_threshold = st.slider('What should the detection_threshold be?', 0.0, 1.0, 0.3)
+    detection_threshold = st.slider('What should the detection threshold be?', 0.0, 1.0, 0.3)
     st.write(f"The Detection Threshold is {detection_threshold}")
-    
+
     class VideoProcessor:
         def recv(self, frame):
 
@@ -151,7 +151,8 @@ def livestream():
             # Show the detection result
             return av.VideoFrame.from_ndarray(detection_result_image, format="bgr24")
 
-    st.write("Doesnt work for me due to network issues")
+    st.write("Might not work due to network issues out of my control")
+    st.write("Note: It's still kinda buggy no cap")
 
     webrtc_streamer(key="example",
                     rtc_configuration=
@@ -183,8 +184,21 @@ def livestream():
 def intro():
     st.title('AI Builders Demo')
     st.write('Made by Gun from Hidden Hammers')
+    st.write("Blog: ")
     st.write("Made using Tensorflow lite")
     st.image(Image.open('streamlit_deploy/sources/tf_lite.png'))
+    st.write("Note: The model works best with single object images that have a white background")
+    st.write("Ex.")
+    st.write("Cardboard")
+    st.image(Image.open('streamlit_deploy/sources/cardboard51.png'))
+    st.write("Glass")
+    st.image(Image.open('streamlit_deploy/sources/glass2.png'))
+    st.write("Metal")
+    st.image(Image.open('streamlit_deploy/sources/metal5.png'))
+    st.write("Paper")
+    st.image(Image.open('streamlit_deploy/sources/paper21.png'))
+    st.write("Plastic")
+    st.image(Image.open('streamlit_deploy/sources/plastic32.png'))
 
 
 page_names_to_funcs = {
