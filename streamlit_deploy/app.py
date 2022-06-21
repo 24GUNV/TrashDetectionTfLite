@@ -152,7 +152,7 @@ def livestream():
             return av.VideoFrame.from_ndarray(detection_result_image, format="bgr24")
 
     st.write("Might not work due to network issues out of my control")
-    st.write("Note: It's still kinda buggy no cap")
+    st.write("Note: It's still kinda buggy and recommended with white background")
 
     webrtc_streamer(key="example",
                     rtc_configuration=
