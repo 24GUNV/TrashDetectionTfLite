@@ -14,13 +14,13 @@
 	<object>
 		<name>plastic</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>76</xmin>
-			<ymin>7</ymin>
-			<xmax>479</xmax>
-			<ymax>384</ymax>
+			<xmin>96</xmin>
+			<ymin>13</ymin>
+			<xmax>449</xmax>
+			<ymax>367</ymax>
 		</bndbox>
 	</object>
 </annotation>

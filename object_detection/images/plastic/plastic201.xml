@@ -1,13 +1,13 @@
 <annotation>
 	<folder>plastic</folder>
-	<filename>plastic65.jpg</filename>
-	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\plastic\plastic65.jpg</path>
+	<filename>plastic201.jpg</filename>
+	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\plastic\plastic201.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>247</width>
-		<height>204</height>
+		<width>217</width>
+		<height>233</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -19,8 +19,8 @@
 		<bndbox>
 			<xmin>1</xmin>
 			<ymin>1</ymin>
-			<xmax>247</xmax>
-			<ymax>201</ymax>
+			<xmax>217</xmax>
+			<ymax>232</ymax>
 		</bndbox>
 	</object>
 </annotation>

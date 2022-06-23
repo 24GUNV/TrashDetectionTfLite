@@ -1,7 +1,7 @@
 <annotation>
 	<folder>plastic</folder>
 	<filename>plastic78.jpg</filename>
-	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\plastic\plastic78.jpg</path>
+	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\plastic\plastic78.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -18,9 +18,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>10</xmin>
-			<ymin>99</ymin>
+			<ymin>104</ymin>
 			<xmax>512</xmax>
-			<ymax>329</ymax>
+			<ymax>321</ymax>
 		</bndbox>
 	</object>
 </annotation>
