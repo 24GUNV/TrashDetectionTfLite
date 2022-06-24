@@ -1,7 +1,7 @@
 <annotation>
-	<folder>green-glass</folder>
+	<folder>glass</folder>
 	<filename>green-glass189.jpg</filename>
-	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\green-glass\green-glass189.jpg</path>
+	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\glass\green-glass189.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -14,13 +14,13 @@
 	<object>
 		<name>glass</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1</xmin>
-			<ymin>32</ymin>
-			<xmax>494</xmax>
-			<ymax>254</ymax>
+			<xmin>26</xmin>
+			<ymin>43</ymin>
+			<xmax>477</xmax>
+			<ymax>226</ymax>
 		</bndbox>
 	</object>
 </annotation>
