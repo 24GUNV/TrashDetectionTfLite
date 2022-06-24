@@ -1,7 +1,7 @@
 <annotation>
 	<folder>cardboard</folder>
 	<filename>cardboard31.jpg</filename>
-	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\cardboard\cardboard31.jpg</path>
+	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\cardboard\cardboard31.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -14,13 +14,13 @@
 	<object>
 		<name>cardboard</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>2</xmin>
-			<ymin>43</ymin>
-			<xmax>512</xmax>
-			<ymax>366</ymax>
+			<xmin>5</xmin>
+			<ymin>61</ymin>
+			<xmax>490</xmax>
+			<ymax>356</ymax>
 		</bndbox>
 	</object>
 </annotation>
