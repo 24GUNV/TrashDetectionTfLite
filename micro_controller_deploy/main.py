@@ -1,4 +1,10 @@
+import numpy as np
+import os
+from tflite_runtime.interpreter import Interpreter
+from picamer2 import *
+from PIL import Image
 import cv2
+
 # Load TFLite model and allocate tensors.
 interpreter = tf.lite.Interpreter(model_path="model.tflite")
 
@@ -13,36 +19,37 @@ corresponding = {
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
-interpreter.allocate_tensors()
+# Initialize the camera
+picam2 = Picamera2()
+picam2.configure(picam2.still_configuration(main={"size": (320, 320)}))
+picam2.start()
 
-# input details
-print(input_details)
-# output details
-print(output_details)
-for x in output_details:
-  print(x)
+detection_threshold = 0.5
 
-img = cv2.imread("aibuilders/object_detection/images/paper/paper1.jpg")
-new_img = cv2.resize(img, (320, 320))
+try:
+    while True:
+        print("Got to the loop")
+        image = picam2.capture_array("")
 
-# Create input tensor out of raw features
-interpreter.set_tensor(input_details[0]['index'], [new_img])
+        print(image)
 
-# Run inference
-interpreter.invoke()
+        # Create input tensor out of raw features
+        interpreter.set_tensor(input_details[0]['index'], image)
 
-# Gets detection outputs
-detected_scores = np.squeeze(interpreter.get_tensor(output_details[0]['index']))
-detected_classes = np.squeeze(interpreter.get_tensor(output_details[3]['index']))
+        print("Running inference")
+        # Run inference
+        interpreter.invoke()
 
-# Print the results of inference
-print(detected_classes)
-print(detected_scores)
+        # Gets detection outputs
+        detected_scores = np.squeeze(interpreter.get_tensor(output_details[0]['index']))
+        detected_classes = np.squeeze(interpreter.get_tensor(output_details[3]['index']))
 
-detection_threshold = 0.3
+        classes = []
+        for i, score in enumerate(detected_scores):
+          if score >= detection_threshold:
+            classes.append((score, corresponding[int(detected_classes[i])]))
+        print(classes)
+        rawCapture.truncate(0)
 
-classes = []
-for i, score in enumerate(detected_scores):
-  if score >= detection_threshold:
-    classes.append((score, corresponding[int(detected_classes[i])]))
-print(classes)
+except KeyboardInterrupt:
+    print("Bye Bye")
