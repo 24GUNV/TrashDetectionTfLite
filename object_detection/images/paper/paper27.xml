@@ -1,7 +1,7 @@
 <annotation>
 	<folder>paper</folder>
 	<filename>paper27.jpg</filename>
-	<path>C:\Users\24pro\Documents\GitHub\aibuilders\classification\images\paper\paper27.jpg</path>
+	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\paper\paper27.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -18,9 +18,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>1</xmin>
-			<ymin>59</ymin>
-			<xmax>484</xmax>
-			<ymax>357</ymax>
+			<ymin>64</ymin>
+			<xmax>474</xmax>
+			<ymax>348</ymax>
 		</bndbox>
 	</object>
 </annotation>
