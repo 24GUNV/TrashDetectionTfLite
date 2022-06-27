@@ -1,7 +1,7 @@
 <annotation>
-	<folder>white-glass</folder>
+	<folder>glass</folder>
 	<filename>white-glass214.jpg</filename>
-	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\white-glass\white-glass214.jpg</path>
+	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\glass\white-glass214.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -18,8 +18,8 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>123</xmin>
-			<ymin>5</ymin>
-			<xmax>459</xmax>
+			<ymin>2</ymin>
+			<xmax>444</xmax>
 			<ymax>384</ymax>
 		</bndbox>
 	</object>
