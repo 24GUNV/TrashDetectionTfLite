@@ -14,12 +14,12 @@
 	<object>
 		<name>metal</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1</xmin>
-			<ymin>49</ymin>
-			<xmax>215</xmax>
+			<xmin>7</xmin>
+			<ymin>55</ymin>
+			<xmax>214</xmax>
 			<ymax>172</ymax>
 		</bndbox>
 	</object>

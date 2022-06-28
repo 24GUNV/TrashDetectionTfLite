@@ -14,13 +14,13 @@
 	<object>
 		<name>metal</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1</xmin>
-			<ymin>52</ymin>
-			<xmax>467</xmax>
-			<ymax>357</ymax>
+			<xmin>4</xmin>
+			<ymin>54</ymin>
+			<xmax>460</xmax>
+			<ymax>348</ymax>
 		</bndbox>
 	</object>
 </annotation>

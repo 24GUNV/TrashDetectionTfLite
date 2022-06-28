@@ -19,7 +19,7 @@
 		<bndbox>
 			<xmin>1</xmin>
 			<ymin>102</ymin>
-			<xmax>441</xmax>
+			<xmax>427</xmax>
 			<ymax>384</ymax>
 		</bndbox>
 	</object>

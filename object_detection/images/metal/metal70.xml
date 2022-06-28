@@ -1,7 +1,7 @@
 <annotation>
 	<folder>metal</folder>
 	<filename>metal70.jpg</filename>
-	<path>C:\Users\24pro\Downloads\trash_class\garbage_classification\metal\metal70.jpg</path>
+	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\metal\metal70.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>139</xmin>
-			<ymin>53</ymin>
-			<xmax>442</xmax>
-			<ymax>321</ymax>
+			<xmin>144</xmin>
+			<ymin>56</ymin>
+			<xmax>426</xmax>
+			<ymax>313</ymax>
 		</bndbox>
 	</object>
 </annotation>

@@ -1,4 +1,4 @@
-<annotation>
+<annotation verified="yes">
 	<folder>metal</folder>
 	<filename>metal143.jpg</filename>
 	<path>C:\Users\24pro\Documents\GitHub\aibuilders\object_detection\images\metal\metal143.jpg</path>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>166</xmin>
-			<ymin>93</ymin>
-			<xmax>388</xmax>
-			<ymax>265</ymax>
+			<xmin>178</xmin>
+			<ymin>105</ymin>
+			<xmax>379</xmax>
+			<ymax>256</ymax>
 		</bndbox>
 	</object>
 </annotation>
