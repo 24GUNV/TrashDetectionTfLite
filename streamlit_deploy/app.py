@@ -24,9 +24,9 @@ interpreter.allocate_tensors()
 # Classes
 classes = {
     0: "cardboard",
-    1: "plastic",
-    2: "metal",
-    3: "glass",
+    1: "metal",
+    2: "glass",
+    3: "plastic",
     4: "paper"
 }
 
